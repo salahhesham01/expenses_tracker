@@ -26,7 +26,6 @@ class _SplashViewState extends State<SplashView> {
           style: TextStyle(
               fontWeight: FontWeight.w400,
               fontSize: 30,
-              fontFamily: "Poppins",
               color: AppColors.forestGreen),
         ),
       ),
