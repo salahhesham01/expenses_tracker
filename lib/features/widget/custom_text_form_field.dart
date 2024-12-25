@@ -35,7 +35,7 @@ class CustomTextFormField extends StatelessWidget {
           borderSide: BorderSide(color: AppColors.forestGreen),
         ),
         contentPadding:
-            const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       ),
     );
   }

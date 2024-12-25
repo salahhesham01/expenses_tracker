@@ -37,7 +37,7 @@ class _AddExpensePageState extends State<AddExpensePage> {
         title: const Text('Add Expense'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(mediaQuery.size.width * 0.03),
+        padding: EdgeInsets.all(mediaQuery.size.width * 0.02),
         child: Form(
           key: _formKey,
           child: Column(
@@ -137,7 +137,7 @@ class _AddExpensePageState extends State<AddExpensePage> {
                 ],
               ),
 
-              SizedBox(height: mediaQuery.size.height * 0.03),
+              SizedBox(height: mediaQuery.size.height * 0.02),
 
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
