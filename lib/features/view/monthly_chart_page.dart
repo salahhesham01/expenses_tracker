@@ -51,28 +51,31 @@ class MonthChartPage extends StatelessWidget {
               );
             }).toList();
 
-            return Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  // Pie Chart
-                  Expanded(
-                    child: PieChart(
-                      PieChartData(
-                        sections: pieChartSections,
-                        sectionsSpace: 4,
-                        centerSpaceRadius: 50,
-                        startDegreeOffset: -90,
-                        borderData: FlBorderData(show: false),
+            return SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    // Pie Chart
+                    SizedBox(
+                      height: 300, // Fixed height for the chart
+                      child: PieChart(
+                        PieChartData(
+                          sections: pieChartSections,
+                          sectionsSpace: 4,
+                          centerSpaceRadius: 50,
+                          startDegreeOffset: -90,
+                          borderData: FlBorderData(show: false),
+                        ),
                       ),
                     ),
-                  ),
 
-                  // Legend
-                  const SizedBox(height: 16),
-                  Expanded(
-                    child: ListView.builder(
+                    // Legend
+                    const SizedBox(height: 16),
+                    ListView.builder(
+                      shrinkWrap: true, // Ensure the ListView fits its content
+                      physics: const NeverScrollableScrollPhysics(),
                       itemCount: monthlyData.entries.length,
                       itemBuilder: (context, index) {
                         final entry = monthlyData.entries.toList()[index];
@@ -105,8 +108,8 @@ class MonthChartPage extends StatelessWidget {
                         );
                       },
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             );
           } else if (state is ExpenseError) {
